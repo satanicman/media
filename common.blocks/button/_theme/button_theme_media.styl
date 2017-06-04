@@ -1,0 +1,18 @@
+.button_theme_media
+  background-color dark-background + 71%
+  box-shadow 0 7px 10px rgba(@background-color, 0.45)
+  border 1px solid #fff
+  border-radius 3px
+  transition background .3s, box-shadow .3s
+  outline 0
+  .button__text
+    color light-color
+    font-family Roboto
+    font-size em(16px)
+    font-weight 700
+    line-height em(24px, 16px)
+    text-transform uppercase
+  &.button_hovered
+    box-shadow: none
+  &.button_focused
+    box-shadow inset 0 -3px 5px rgba(0, 0, 0, 0.2)
