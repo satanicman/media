@@ -1,5 +1,5 @@
 .button_theme_media
-  background-color dark-background + 71%
+  background-color gray
   box-shadow 0 7px 10px rgba(@background-color, 0.45)
   border 1px solid #fff
   border-radius 3px
@@ -12,6 +12,9 @@
     font-weight 700
     line-height em(24px, 16px)
     text-transform uppercase
+  &.button_hovered
+  &.button_focused
+    background-color: gray-dark
   &.button_hovered
     box-shadow: none
   &.button_focused
