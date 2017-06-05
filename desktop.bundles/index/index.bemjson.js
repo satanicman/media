@@ -202,6 +202,7 @@ module.exports = {
                                             mods: {
                                                 color: 'blue'
                                             },
+                                            mix: {block: 'main', elem: 'title'},
                                             content: {
                                                 block: 'h',
                                                 mods: {
@@ -401,6 +402,7 @@ module.exports = {
                                             mods: {
                                                 color: 'green'
                                             },
+                                            mix: {block: 'main', elem: 'title'},
                                             content: {
                                                 block: 'h',
                                                 mods: {
