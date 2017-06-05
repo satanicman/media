@@ -94,7 +94,7 @@ module.exports = {
                                             {name: 'Люди'},
                                             {name: 'Рынок'},
                                             {name: 'О проекте'}
-                                        ].map(function(element) {
+                                        ].map(function (element) {
                                             return {
                                                 elem: 'item',
                                                 content: {
@@ -134,7 +134,7 @@ module.exports = {
                     }
                 } // mobile-menu
             ]
-        },
+        }, // header
         {
             block: 'content',
             content: [
@@ -147,15 +147,12 @@ module.exports = {
                             mix: {block: 'clearfix'},
                             content: {
                                 elem: 'list',
-                                mix: [
-                                    {block: 'col-lg-12'}
-                                ],
                                 content: [
                                     {rubric: 'Рынок', text: 'Революция на рынке наружной рекламы Киева'},
                                     {rubric: 'Новости', text: 'Скандал с Укрпочтой: издательство осталось без денег'},
                                     {rubric: 'Новости', text: 'Суд США зпретил UMH Использовать бренд Forbes'},
                                     {rubric: 'Люди', text: 'Андрей Хрусталев покинул журнал Корреспондент'}
-                                ].map(function(elem, index) {
+                                ].map(function (elem, index) {
                                     var id = index + 1;
                                     return {
                                         block: 'news',
@@ -179,7 +176,7 @@ module.exports = {
                                                 content: [
                                                     {
                                                         block: 'text',
-                                                        mix: {block: 'news', elem: 'rubric', elemMods:{type: id}},
+                                                        mix: {block: 'news', elem: 'rubric', elemMods: {type: id}},
                                                         content: elem.rubric
                                                     },
                                                     {
@@ -193,6 +190,329 @@ module.exports = {
                                     }
                                 })
                             }
+                        }, // news-top
+                        {
+                            block: 'main',
+                            content: [
+                                {
+                                    elem: 'center-column',
+                                    content: [
+                                        {
+                                            block: 'title',
+                                            mods: {
+                                                color: 'blue'
+                                            },
+                                            content: {
+                                                block: 'h',
+                                                mods: {
+                                                    type: '2'
+                                                },
+                                                content: 'Популярные новости'
+                                            }
+                                        }, // title
+                                        {
+                                            block: 'popular-news',
+                                            content: [
+                                                {
+                                                    elem: 'main',
+                                                    content: [
+                                                        {
+                                                            name: 'В УКРАЇНІ ЗАПРАЦЮВАЛО РАДІО ДЛЯ АГРАРІЇВ',
+                                                            rubric: 'Новости',
+                                                            date: '22.03.2017',
+                                                            comments: '100',
+                                                            text: 'В інтернеті почало мовлення радіо для аграріїв «АгроФМ» медіа-проекту «Фармерс медіа Про це виданню «Інтерфакс-Україна» повідомив шеф-редактор радіостанції Олександр Журавель. (...)'
+                                                        }
+                                                    ].map(function (item, index) {
+                                                        var id = index + 1;
+                                                        return {
+                                                            block: 'news',
+                                                            mods: {
+                                                                type: 'popular'
+                                                            },
+                                                            content: {
+                                                                block: 'link',
+                                                                mix: {block: 'news', elem: 'link'},
+                                                                url: item.url,
+                                                                title: item.name,
+                                                                content: [
+                                                                    {
+                                                                        elem: 'image',
+                                                                        content: [
+                                                                            {
+                                                                                block: 'image',
+                                                                                mix: [
+                                                                                    {block: 'img-responsive'}
+                                                                                ],
+                                                                                url: '../../common.blocks/news/_type/news_type_popular-' + id + '.jpg',
+                                                                                alt: item.name,
+                                                                                title: item.name
+                                                                            }, // image
+                                                                            {
+                                                                                block: 'rubric-plate',
+                                                                                content: item.rubric
+                                                                            }
+                                                                        ]
+                                                                    },  // news__image
+                                                                    {
+                                                                        block: 'news-description',
+                                                                        mix: {block: 'news', elem: 'description'},
+                                                                        content: [
+                                                                            {
+                                                                                elem: 'title',
+                                                                                content: item.name
+                                                                            },
+                                                                            {
+                                                                                elem: 'info',
+                                                                                content: [
+                                                                                    {
+                                                                                        elem: 'date',
+                                                                                        content: item.date
+                                                                                    },
+                                                                                    {
+                                                                                        elem: 'comments',
+                                                                                        mix: {
+                                                                                            block: 'fa',
+                                                                                            mods: {icon: 'comments-o'}
+                                                                                        },
+                                                                                        content: item.comments
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                elem: 'text',
+                                                                                content: item.text
+                                                                            }
+                                                                        ]
+                                                                    } // news-description
+                                                                ]
+                                                            }
+                                                        };
+                                                    })
+                                                },
+                                                {
+                                                    elem: 'list',
+                                                    content: [
+                                                        {
+                                                            name: 'НА РЫНОК ОНЛАЙН-СМИ ВЫХОДИТ РЕАЛИСТ',
+                                                            date: '22.03.2017',
+                                                            comments: '100'
+                                                        },
+                                                        {
+                                                            name: 'ГАЗЕТУ ДЕЛОВАЯ СТОЛИЦА ОЖИДАЮТ ИЗМЕНЕНИЯ',
+                                                            date: '22.03.2017',
+                                                            comments: '100'
+                                                        },
+                                                        {
+                                                            name: 'НОВОЕ ВРЕМЯ ЗАПУСКАЕТ НОВУЮ ЭЛЕКТРОННУЮ ...',
+                                                            date: '22.03.2017',
+                                                            comments: '100'
+                                                        },
+                                                        {
+                                                            name: 'НОВОЕ ВРЕМЯ ЗАПУСКАЕТ НОВУЮ ЭЛЕКТРОННУЮ ...',
+                                                            date: '22.03.2017',
+                                                            comments: '100'
+                                                        },
+                                                        {
+                                                            name: 'ИНТЕРНЕТ- ИЗДАНИЕ ИНСАЙДЕР ПРЕКРАЩАЕТ...',
+                                                            date: '22.03.2017',
+                                                            comments: '100'
+                                                        },
+                                                        {
+                                                            name: 'КАБМІН ВИЗНАЧИВ ЗМІ, ЧЕРЕЗ ЯКІ ВИКЛИКАТИМУТЬ ДО СУДУ',
+                                                            date: '22.03.2017',
+                                                            comments: '100'
+                                                        }
+                                                    ].map(function (item, index) {
+                                                        var id = index + 2;
+                                                        return {
+                                                            elem: 'item',
+                                                            content: [
+                                                                {
+                                                                    block: 'news',
+                                                                    mods: {
+                                                                        type: 'popular'
+                                                                    },
+                                                                    content: {
+                                                                        block: 'link',
+                                                                        mix: {block: 'news', elem: 'link'},
+                                                                        url: item.url,
+                                                                        title: item.name,
+                                                                        content: [
+                                                                            {
+                                                                                elem: 'image',
+                                                                                content: [
+                                                                                    {
+                                                                                        block: 'image',
+                                                                                        mix: [
+                                                                                            {block: 'img-responsive'}
+                                                                                        ],
+                                                                                        url: '../../common.blocks/news/_type/news_type_popular-' + id + '.jpg',
+                                                                                        alt: item.name,
+                                                                                        title: item.name
+                                                                                    }
+                                                                                ]
+                                                                            },  // news__image
+                                                                            {
+                                                                                block: 'news-description',
+                                                                                mods: {
+                                                                                    small: true
+                                                                                },
+                                                                                mix: {
+                                                                                    block: 'news',
+                                                                                    elem: 'description'
+                                                                                },
+                                                                                content: [
+                                                                                    {
+                                                                                        elem: 'title',
+                                                                                        content: item.name
+                                                                                    },
+                                                                                    {
+                                                                                        elem: 'info',
+                                                                                        content: [
+                                                                                            {
+                                                                                                elem: 'date',
+                                                                                                content: item.date
+                                                                                            },
+                                                                                            {
+                                                                                                elem: 'comments',
+                                                                                                mix: {
+                                                                                                    block: 'fa',
+                                                                                                    mods: {icon: 'comments-o'}
+                                                                                                },
+                                                                                                content: item.comments
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            } // news-description
+                                                                        ]
+                                                                    }
+                                                                },
+
+                                                            ]
+                                                        }
+                                                    })
+                                                }
+                                            ]
+                                        }, // popular-news
+                                        {
+                                            block: 'title',
+                                            mods: {
+                                                color: 'green'
+                                            },
+                                            content: {
+                                                block: 'h',
+                                                mods: {
+                                                    type: '2'
+                                                },
+                                                content: 'Последние новости'
+                                            }
+                                        }, // title
+                                        {
+                                            block: 'news-list',
+                                            content: [
+                                                {name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS', date: '12.04.2017', comments: '1', text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'},
+                                                {name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS', date: '12.04.2017', comments: '1', text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'},
+                                                {name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS', date: '12.04.2017', comments: '1', text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'},
+                                                {name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS', date: '12.04.2017', comments: '1', text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'}
+                                            ].map(function (item, index) {
+                                                return {
+                                                    elem: 'item',
+                                                    content: {
+                                                        block: 'news',
+                                                        mods: {
+                                                            list: true
+                                                        },
+                                                        content: {
+                                                            block: 'link',
+                                                            mix: {block: 'news', elem: 'link'},
+                                                            url: item.url,
+                                                            title: item.url,
+                                                            content: [
+                                                                {
+                                                                    elem: 'image',
+                                                                    content: {
+                                                                        block: 'image',
+                                                                        url: '../../common.blocks/news/_type/news_type_list.jpg',
+                                                                        title: item.name,
+                                                                        alt: item.name
+                                                                    }
+                                                                },
+                                                                {
+                                                                    block: 'news-description',
+                                                                    mix: {block: 'news', elem: 'description'},
+                                                                    content: [
+                                                                        {
+                                                                            elem: 'title',
+                                                                            content: item.name
+                                                                        },
+                                                                        {
+                                                                            elem: 'info',
+                                                                            content: [
+                                                                                {
+                                                                                    elem: 'date',
+                                                                                    content: item.date
+                                                                                },
+                                                                                {
+                                                                                    elem: 'comments',
+                                                                                    mix: {
+                                                                                        block: 'fa',
+                                                                                        mods: {icon: 'comments-o'}
+                                                                                    },
+                                                                                    content: item.comments
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            elem: 'text',
+                                                                            content: item.text
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                };
+                                            })
+                                        }, // news-list
+                                        {
+                                            block: 'banner',
+                                            mods: {
+                                                center: true
+                                            },
+                                            content: {
+                                                block: 'image',
+                                                url: '../../common.blocks/banner/_center/banner_center.jpg',
+                                                title: 'center banner',
+                                                alt: 'center banner'
+                                            }
+                                        } // banner_center
+                                    ]
+                                }, // main__center-column
+                                {
+                                    elem: 'right-column',
+                                    content: [
+                                        {num: 1},
+                                        {num: 2}
+                                    ].map(function (elem) {
+                                        return {
+                                            block: 'banner',
+                                            mods: {right: true},
+                                            content: {
+                                                elem: 'image',
+                                                content: {
+                                                    block: 'image',
+                                                    mix: {block: 'img-responsive'},
+                                                    url: '../../common.blocks/banner/_right/banner_right-' + elem.num + '.jpg',
+                                                    alt: 'right banner 1' + elem.num,
+                                                    title: 'right banner 1' + elem.num
+                                                }
+                                            }
+                                        };
+                                    })
+                                } // main__right-column
+                            ]
                         },
                         {
                             block: 'fa',
@@ -297,7 +617,7 @@ module.exports = {
                                     {url: '#', name: 'Instagram', icon: 'instagram'},
                                     {url: '#', name: 'Vimeo', icon: 'vimeo'},
                                     {url: '#', name: 'Youtube', icon: 'youtube-play'},
-                                ].map(function(item) {
+                                ].map(function (item) {
                                     return {
                                         elem: 'item',
                                         content: {
@@ -384,7 +704,7 @@ module.exports = {
                                                         {url: '#', name: 'О проекте'},
                                                         {url: '#', name: 'Люди'},
                                                         {url: '#', name: 'Рынок'}
-                                                    ].map(function(elem){
+                                                    ].map(function (elem) {
                                                         return {
                                                             elem: 'item',
                                                             content: {
@@ -445,7 +765,7 @@ module.exports = {
                             }
                         }
                     ]
-                },
+                }, // footer__container
                 {
                     block: 'copyright',
                     mix: {block: 'footer', elem: 'copyright'},
@@ -457,8 +777,8 @@ module.exports = {
                             content: 'BuyingPress @ 2017  ВСЕ ПРАВА ЗАЩИЩЕНЫ'
                         }
                     }
-                }
+                } // copyright
             ]
-        }
+        } // footer
     ]
 };
