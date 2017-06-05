@@ -1,0 +1,13 @@
+.mobile-menu-collapsed
+  position: relative
+  border-style solid
+  border-color blue-light
+  border-width 2px 0
+  @extend .row
+  @media (min-width $grid-float-breakpoint)
+    border-width 0
+    margin: 0
+    &.collapse
+      display: block !important
+      height auto !important
+      overflow visible !important

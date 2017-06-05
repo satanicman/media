@@ -1,0 +1,10 @@
+.mobile-menu-header
+  display flex
+  align-items center
+  justify-content space-between
+  font-size em(20px)
+  padding: 10px 0
+  &.collapsed .mobile-menu-header__button:before
+    content "\f0c9"
+  @media (min-width $grid-float-breakpoint)
+    display: none
