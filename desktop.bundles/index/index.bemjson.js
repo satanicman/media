@@ -26,6 +26,7 @@ module.exports = {
                             mods: {top: true},
                             content: {
                                 block: 'link',
+                                mix: {block: 'banner', elem: 'link'},
                                 url: '#',
                                 title: 'top banner',
                                 js: false,
@@ -33,7 +34,6 @@ module.exports = {
                                     block: 'image',
                                     mix: [
                                         {block: 'banner', elem: 'image'},
-                                        {block: 'img-responsive'}
                                     ],
                                     alt: 'banner top',
                                     url: '../../common.blocks/banner/_top/banner_top.jpg'
@@ -420,102 +420,111 @@ module.exports = {
                                             }
                                         }, // title
                                         {
-                                            block: 'news-list',
-                                            content: [
-                                                {
-                                                    name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS',
-                                                    date: '12.04.2017',
-                                                    comments: '1',
-                                                    text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'
-                                                },
-                                                {
-                                                    name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS',
-                                                    date: '12.04.2017',
-                                                    comments: '1',
-                                                    text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'
-                                                },
-                                                {
-                                                    name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS',
-                                                    date: '12.04.2017',
-                                                    comments: '1',
-                                                    text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'
-                                                },
-                                                {
-                                                    name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS',
-                                                    date: '12.04.2017',
-                                                    comments: '1',
-                                                    text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'
-                                                }
-                                            ].map(function (item, index) {
-                                                return {
-                                                    elem: 'item',
-                                                    content: {
-                                                        block: 'news',
-                                                        mods: {
-                                                            list: true
-                                                        },
+                                            elem: 'news-list',
+                                            content: {
+                                                block: 'news-list',
+                                                content: [
+                                                    {
+                                                        name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS',
+                                                        date: '12.04.2017',
+                                                        comments: '1',
+                                                        text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'
+                                                    },
+                                                    {
+                                                        name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS',
+                                                        date: '12.04.2017',
+                                                        comments: '1',
+                                                        text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'
+                                                    },
+                                                    {
+                                                        name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS',
+                                                        date: '12.04.2017',
+                                                        comments: '1',
+                                                        text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'
+                                                    },
+                                                    {
+                                                        name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS',
+                                                        date: '12.04.2017',
+                                                        comments: '1',
+                                                        text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'
+                                                    }
+                                                ].map(function (item, index) {
+                                                    return {
+                                                        elem: 'item',
                                                         content: {
                                                             block: 'link',
                                                             mix: {block: 'news', elem: 'link'},
                                                             url: item.url,
                                                             title: item.url,
-                                                            content: [
-                                                                {
-                                                                    elem: 'image',
-                                                                    content: {
-                                                                        block: 'image',
-                                                                        url: '../../common.blocks/news/_type/news_type_list.jpg',
-                                                                        title: item.name,
-                                                                        alt: item.name
-                                                                    }
+                                                            content: {
+                                                                block: 'news',
+                                                                mods: {
+                                                                    type: 'list'
                                                                 },
-                                                                {
-                                                                    block: 'news-description',
-                                                                    mix: {block: 'news', elem: 'description'},
-                                                                    content: [
-                                                                        {
-                                                                            elem: 'title',
-                                                                            content: item.name
-                                                                        },
-                                                                        {
-                                                                            elem: 'info',
-                                                                            content: [
-                                                                                {
-                                                                                    elem: 'date',
-                                                                                    content: item.date
-                                                                                },
-                                                                                {
-                                                                                    elem: 'comments',
-                                                                                    mix: {
-                                                                                        block: 'fa',
-                                                                                        mods: {icon: 'comments-o'}
-                                                                                    },
-                                                                                    content: item.comments
-                                                                                }
-                                                                            ]
-                                                                        },
-                                                                        {
-                                                                            elem: 'text',
-                                                                            content: item.text
+                                                                content: [
+                                                                    {
+                                                                        elem: 'image',
+                                                                        content: {
+                                                                            block: 'image',
+                                                                            url: '../../common.blocks/news/_type/news_type_list.jpg',
+                                                                            title: item.name,
+                                                                            alt: item.name
                                                                         }
-                                                                    ]
-                                                                }
-                                                            ]
+                                                                    },
+                                                                    {
+                                                                        block: 'news-description',
+                                                                        mix: {block: 'news', elem: 'description'},
+                                                                        content: [
+                                                                            {
+                                                                                elem: 'title',
+                                                                                content: item.name
+                                                                            },
+                                                                            {
+                                                                                elem: 'info',
+                                                                                content: [
+                                                                                    {
+                                                                                        elem: 'date',
+                                                                                        content: item.date
+                                                                                    },
+                                                                                    {
+                                                                                        elem: 'comments',
+                                                                                        mix: {
+                                                                                            block: 'fa',
+                                                                                            mods: {icon: 'comments-o'}
+                                                                                        },
+                                                                                        content: item.comments
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                elem: 'text',
+                                                                                content: item.text
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
                                                         }
-                                                    }
-                                                };
-                                            })
-                                        }, // news-list
+                                                    };
+                                                })
+                                            }, // news-list
+                                        },
                                         {
                                             block: 'banner',
-                                            mods: {
-                                                center: true
-                                            },
+                                            mods: {center: true},
                                             content: {
-                                                block: 'image',
-                                                url: '../../common.blocks/banner/_center/banner_center.jpg',
+                                                block: 'link',
+                                                mix: {block: 'banner', elem: 'link'},
+                                                url: '#',
+                                                alt: 'center banner',
                                                 title: 'center banner',
-                                                alt: 'center banner'
+                                                content: {
+                                                    block: 'image',
+                                                    mix: {block: 'banner', elem: 'image'},
+                                                    url: '../../common.blocks/banner/_center/banner_center.jpg',
+                                                    title: 'center banner',
+                                                    alt: 'center banner'
+                                                }
                                             }
                                         } // banner_center
                                     ]
@@ -530,10 +539,14 @@ module.exports = {
                                             block: 'banner',
                                             mods: {right: true},
                                             content: {
-                                                elem: 'image',
+                                                block: 'link',
+                                                mix: {block: 'banner', elem: 'link'},
+                                                url: '#',
+                                                alt: 'right column',
+                                                title: 'right column',
                                                 content: {
                                                     block: 'image',
-                                                    mix: {block: 'img-responsive'},
+                                                    mix: {block: 'banner', elem: 'image'},
                                                     url: '../../common.blocks/banner/_right/banner_right-' + elem.num + '.jpg',
                                                     alt: 'right banner 1' + elem.num,
                                                     title: 'right banner 1' + elem.num
@@ -543,83 +556,88 @@ module.exports = {
                                     })
                                 } // main__right-column
                             ]
-                        },
-                        {
-                            block: 'fa',
-                            mods: {
-                                icon: 'adjust'
-                            }
-                        },
-                        {
-                            block: 'button',
-                            mods: {
-                                size: 'md',
-                                theme: 'media',
-                                color: 'orange'
-                            },
-                            text: 'test'
-                        },
-                        {
-                            block: 'button',
-                            mods: {
-                                size: 'md',
-                                theme: 'media',
-                                color: 'blue'
-                            },
-                            text: 'test'
-                        },
-                        {
-                            block: 'button',
-                            mods: {
-                                size: 'md',
-                                theme: 'media'
-                            },
-                            text: 'test'
-                        },
-                        {
-                            block: 'headers',
-                            content: [
-                                {
-                                    block: 'h',
-                                    mods: {
-                                        type: '1'
-                                    },
-                                    content: 'h1'
-                                },
-                                {
-                                    block: 'h',
-                                    mods: {
-                                        type: '2'
-                                    },
-                                    content: 'h2'
-                                },
-                                {
-                                    block: 'h',
-                                    mods: {
-                                        type: '3'
-                                    },
-                                    content: 'h3'
-                                },
-                                {
-                                    block: 'h',
-                                    mods: {
-                                        type: '4'
-                                    },
-                                    content: 'h4'
-                                },
-                                {
-                                    block: 'h',
-                                    mods: {
-                                        type: '5'
-                                    },
-                                    content: 'h5'
-                                },
-                                {
-                                    block: 'text',
-                                    content: 'Киевский городской совет утвердил новую концепцию развития наружной рекламы. За это решение проголосовали 85 депутатов, но его еще должен подписать мэр, отмечает MMR. Новые правила предусматривают разделение Киева на пять зон - начиная от нулевой в центре, где наружная реклама практически запрещена.'
-                                }
-                            ]
                         }
+                        // {
+                        //     block: 'elements',
+                        //     content: [
+                        //         {
+                        //             block: 'fa',
+                        //             mods: {
+                        //                 icon: 'adjust'
+                        //             }
+                        //         },
+                        //         {
+                        //             block: 'button',
+                        //             mods: {
+                        //                 size: 'md',
+                        //                 theme: 'media',
+                        //                 color: 'orange'
+                        //             },
+                        //             text: 'test'
+                        //         },
+                        //         {
+                        //             block: 'button',
+                        //             mods: {
+                        //                 size: 'md',
+                        //                 theme: 'media',
+                        //                 color: 'blue'
+                        //             },
+                        //             text: 'test'
+                        //         },
+                        //         {
+                        //             block: 'button',
+                        //             mods: {
+                        //                 size: 'md',
+                        //                 theme: 'media'
+                        //             },
+                        //             text: 'test'
+                        //         },
+                        //         {
+                        //             block: 'headers',
+                        //             content: [
+                        //                 {
+                        //                     block: 'h',
+                        //                     mods: {
+                        //                         type: '1'
+                        //                     },
+                        //                     content: 'h1'
+                        //                 },
+                        //                 {
+                        //                     block: 'h',
+                        //                     mods: {
+                        //                         type: '2'
+                        //                     },
+                        //                     content: 'h2'
+                        //                 },
+                        //                 {
+                        //                     block: 'h',
+                        //                     mods: {
+                        //                         type: '3'
+                        //                     },
+                        //                     content: 'h3'
+                        //                 },
+                        //                 {
+                        //                     block: 'h',
+                        //                     mods: {
+                        //                         type: '4'
+                        //                     },
+                        //                     content: 'h4'
+                        //                 },
+                        //                 {
+                        //                     block: 'h',
+                        //                     mods: {
+                        //                         type: '5'
+                        //                     },
+                        //                     content: 'h5'
+                        //                 },
+                        //                 {
+                        //                     block: 'text',
+                        //                     content: 'Киевский городской совет утвердил новую концепцию развития наружной рекламы. За это решение проголосовали 85 депутатов, но его еще должен подписать мэр, отмечает MMR. Новые правила предусматривают разделение Киева на пять зон - начиная от нулевой в центре, где наружная реклама практически запрещена.'
+                        //                 }
+                        //             ]
+                        //         }
+                        //     ]
+                        // }
                     ]
                 }
             ]
