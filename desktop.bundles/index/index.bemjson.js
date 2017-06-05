@@ -25,7 +25,10 @@ module.exports = {
                     content: [
                         {
                             block: 'news-top',
-                            mix: {block: 'clearfix'},
+                            mix: [
+                                {block: 'clearfix'},
+                                {block: 'content', elem: 'news-top'}
+                            ],
                             content: {
                                 elem: 'list',
                                 content: [
