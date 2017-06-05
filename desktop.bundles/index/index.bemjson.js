@@ -175,8 +175,9 @@ module.exports = {
                                                 elem: 'content',
                                                 content: [
                                                     {
-                                                        block: 'text',
-                                                        mix: {block: 'news', elem: 'rubric', elemMods: {type: id}},
+                                                        block: 'rubric-plate',
+                                                        mods: {color: 'green'},
+                                                        mix: {block: 'news', elem: 'rubric'},
                                                         content: elem.rubric
                                                     },
                                                     {
@@ -213,6 +214,7 @@ module.exports = {
                                         }, // title
                                         {
                                             block: 'popular-news',
+                                            mix: {block: 'main', elem: 'popular-news'},
                                             content: [
                                                 {
                                                     elem: 'main',
@@ -227,15 +229,15 @@ module.exports = {
                                                     ].map(function (item, index) {
                                                         var id = index + 1;
                                                         return {
-                                                            block: 'news',
-                                                            mods: {
-                                                                type: 'popular'
-                                                            },
+                                                            block: 'link',
+                                                            mix: {block: 'news', elem: 'link'},
+                                                            url: item.url,
+                                                            title: item.name,
                                                             content: {
-                                                                block: 'link',
-                                                                mix: {block: 'news', elem: 'link'},
-                                                                url: item.url,
-                                                                title: item.name,
+                                                                block: 'news',
+                                                                mods: {
+                                                                    type: 'popular'
+                                                                },
                                                                 content: [
                                                                     {
                                                                         elem: 'image',
@@ -251,13 +253,16 @@ module.exports = {
                                                                             }, // image
                                                                             {
                                                                                 block: 'rubric-plate',
+                                                                                mods: {color: 'green'},
                                                                                 content: item.rubric
                                                                             }
                                                                         ]
                                                                     },  // news__image
                                                                     {
                                                                         block: 'news-description',
-                                                                        mix: {block: 'news', elem: 'description'},
+                                                                        mix: [
+                                                                            {block: 'news', elem: 'description'}
+                                                                        ],
                                                                         content: [
                                                                             {
                                                                                 elem: 'title',
@@ -290,110 +295,113 @@ module.exports = {
                                                             }
                                                         };
                                                     })
-                                                },
+                                                }, // popular-news__main
                                                 {
-                                                    elem: 'list',
-                                                    content: [
-                                                        {
-                                                            name: 'НА РЫНОК ОНЛАЙН-СМИ ВЫХОДИТ РЕАЛИСТ',
-                                                            date: '22.03.2017',
-                                                            comments: '100'
-                                                        },
-                                                        {
-                                                            name: 'ГАЗЕТУ ДЕЛОВАЯ СТОЛИЦА ОЖИДАЮТ ИЗМЕНЕНИЯ',
-                                                            date: '22.03.2017',
-                                                            comments: '100'
-                                                        },
-                                                        {
-                                                            name: 'НОВОЕ ВРЕМЯ ЗАПУСКАЕТ НОВУЮ ЭЛЕКТРОННУЮ ...',
-                                                            date: '22.03.2017',
-                                                            comments: '100'
-                                                        },
-                                                        {
-                                                            name: 'НОВОЕ ВРЕМЯ ЗАПУСКАЕТ НОВУЮ ЭЛЕКТРОННУЮ ...',
-                                                            date: '22.03.2017',
-                                                            comments: '100'
-                                                        },
-                                                        {
-                                                            name: 'ИНТЕРНЕТ- ИЗДАНИЕ ИНСАЙДЕР ПРЕКРАЩАЕТ...',
-                                                            date: '22.03.2017',
-                                                            comments: '100'
-                                                        },
-                                                        {
-                                                            name: 'КАБМІН ВИЗНАЧИВ ЗМІ, ЧЕРЕЗ ЯКІ ВИКЛИКАТИМУТЬ ДО СУДУ',
-                                                            date: '22.03.2017',
-                                                            comments: '100'
-                                                        }
-                                                    ].map(function (item, index) {
-                                                        var id = index + 2;
-                                                        return {
-                                                            elem: 'item',
-                                                            content: [
-                                                                {
-                                                                    block: 'news',
-                                                                    mods: {
-                                                                        type: 'popular'
-                                                                    },
-                                                                    content: {
+                                                    elem: 'sub',
+                                                    content: {
+                                                        elem: 'list',
+                                                        content: [
+                                                            {
+                                                                name: 'НА РЫНОК ОНЛАЙН-СМИ ВЫХОДИТ РЕАЛИСТ',
+                                                                date: '22.03.2017',
+                                                                comments: '100'
+                                                            },
+                                                            {
+                                                                name: 'ГАЗЕТУ ДЕЛОВАЯ СТОЛИЦА ОЖИДАЮТ ИЗМЕНЕНИЯ',
+                                                                date: '22.03.2017',
+                                                                comments: '100'
+                                                            },
+                                                            {
+                                                                name: 'НОВОЕ ВРЕМЯ ЗАПУСКАЕТ НОВУЮ ЭЛЕКТРОННУЮ ...',
+                                                                date: '22.03.2017',
+                                                                comments: '100'
+                                                            },
+                                                            {
+                                                                name: 'НОВОЕ ВРЕМЯ ЗАПУСКАЕТ НОВУЮ ЭЛЕКТРОННУЮ ...',
+                                                                date: '22.03.2017',
+                                                                comments: '100'
+                                                            },
+                                                            {
+                                                                name: 'ИНТЕРНЕТ- ИЗДАНИЕ ИНСАЙДЕР ПРЕКРАЩАЕТ...',
+                                                                date: '22.03.2017',
+                                                                comments: '100'
+                                                            },
+                                                            {
+                                                                name: 'КАБМІН ВИЗНАЧИВ ЗМІ, ЧЕРЕЗ ЯКІ ВИКЛИКАТИМУТЬ ДО СУДУ',
+                                                                date: '22.03.2017',
+                                                                comments: '100'
+                                                            }
+                                                        ].map(function (item, index) {
+                                                            var id = index + 2;
+                                                            return {
+                                                                elem: 'item',
+                                                                content: [
+                                                                    {
                                                                         block: 'link',
                                                                         mix: {block: 'news', elem: 'link'},
                                                                         url: item.url,
                                                                         title: item.name,
-                                                                        content: [
-                                                                            {
-                                                                                elem: 'image',
-                                                                                content: [
-                                                                                    {
-                                                                                        block: 'image',
-                                                                                        mix: [
-                                                                                            {block: 'img-responsive'}
-                                                                                        ],
-                                                                                        url: '../../common.blocks/news/_type/news_type_popular-' + id + '.jpg',
-                                                                                        alt: item.name,
-                                                                                        title: item.name
-                                                                                    }
-                                                                                ]
-                                                                            },  // news__image
-                                                                            {
-                                                                                block: 'news-description',
-                                                                                mods: {
-                                                                                    small: true
-                                                                                },
-                                                                                mix: {
-                                                                                    block: 'news',
-                                                                                    elem: 'description'
-                                                                                },
-                                                                                content: [
-                                                                                    {
-                                                                                        elem: 'title',
-                                                                                        content: item.name
+                                                                        content: {
+                                                                            block: 'news',
+                                                                            mods: {
+                                                                                type: 'popular',
+                                                                                small: true
+                                                                            },
+                                                                            content: [
+                                                                                {
+                                                                                    elem: 'image',
+                                                                                    content: [
+                                                                                        {
+                                                                                            block: 'image',
+                                                                                            mix: [
+                                                                                                {block: 'img-responsive'}
+                                                                                            ],
+                                                                                            url: '../../common.blocks/news/_type/news_type_popular-' + id + '.jpg',
+                                                                                            alt: item.name,
+                                                                                            title: item.name
+                                                                                        }
+                                                                                    ]
+                                                                                },  // news__image
+                                                                                {
+                                                                                    block: 'news-description',
+                                                                                    mods: {
+                                                                                        size: 'small'
                                                                                     },
-                                                                                    {
-                                                                                        elem: 'info',
-                                                                                        content: [
-                                                                                            {
-                                                                                                elem: 'date',
-                                                                                                content: item.date
-                                                                                            },
-                                                                                            {
-                                                                                                elem: 'comments',
-                                                                                                mix: {
-                                                                                                    block: 'fa',
-                                                                                                    mods: {icon: 'comments-o'}
+                                                                                    mix: {
+                                                                                        block: 'news',
+                                                                                        elem: 'description'
+                                                                                    },
+                                                                                    content: [
+                                                                                        {
+                                                                                            elem: 'title',
+                                                                                            content: item.name
+                                                                                        },
+                                                                                        {
+                                                                                            elem: 'info',
+                                                                                            content: [
+                                                                                                {
+                                                                                                    elem: 'date',
+                                                                                                    content: item.date
                                                                                                 },
-                                                                                                content: item.comments
-                                                                                            }
-                                                                                        ]
-                                                                                    }
-                                                                                ]
-                                                                            } // news-description
-                                                                        ]
+                                                                                                {
+                                                                                                    elem: 'comments',
+                                                                                                    mix: {
+                                                                                                        block: 'fa',
+                                                                                                        mods: {icon: 'comments-o'}
+                                                                                                    },
+                                                                                                    content: item.comments
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                } // news-description
+                                                                            ]
+                                                                        }
                                                                     }
-                                                                },
-
-                                                            ]
-                                                        }
-                                                    })
+                                                                ]
+                                                            }
+                                                        })
+                                                    } // popular-news__list
                                                 }
                                             ]
                                         }, // popular-news
@@ -414,10 +422,30 @@ module.exports = {
                                         {
                                             block: 'news-list',
                                             content: [
-                                                {name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS', date: '12.04.2017', comments: '1', text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'},
-                                                {name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS', date: '12.04.2017', comments: '1', text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'},
-                                                {name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS', date: '12.04.2017', comments: '1', text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'},
-                                                {name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS', date: '12.04.2017', comments: '1', text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'}
+                                                {
+                                                    name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS',
+                                                    date: '12.04.2017',
+                                                    comments: '1',
+                                                    text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'
+                                                },
+                                                {
+                                                    name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS',
+                                                    date: '12.04.2017',
+                                                    comments: '1',
+                                                    text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'
+                                                },
+                                                {
+                                                    name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS',
+                                                    date: '12.04.2017',
+                                                    comments: '1',
+                                                    text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'
+                                                },
+                                                {
+                                                    name: 'ВОЛОДИМИР МАКЕЄНКО СТАВ ВЛАСНИКОМ 9,5% ТЕЛЕКАНАЛУ TONIS',
+                                                    date: '12.04.2017',
+                                                    comments: '1',
+                                                    text: 'У структурі власності ТОВ «Телеканал “Тоніс”» (телеканал Tonis) відбулися зміни: власником частки 9,5% статутного фонду став український політик Володимир Макеєнко. (...)'
+                                                }
                                             ].map(function (item, index) {
                                                 return {
                                                     elem: 'item',
