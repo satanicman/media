@@ -1,0 +1,43 @@
+.newsletter__input
+  position relative
+  display block
+  overflow hidden
+  &:after,
+  &:before
+    content ''
+    display block
+    position: absolute
+    top 0
+    width 100%
+    height 100%
+    z-index 1
+    transition all .3s
+  &:before
+    background rgba(light-background, .1)
+    left 0
+  &:after
+    background blue-light
+    right 100%
+  &.input_focused:after
+    right 0
+  .input__control
+    position relative
+    z-index 3
+    width: 100%
+    background #424242
+    padding 15px 0
+    border none
+    //border-style solid
+    //border-color rgba(#fff, .1)
+    //border-width 0 0 1px
+    color light-color
+    outline 0
+    margin-bottom: 1px
+    &::-webkit-input-placeholder
+      color light-color
+    &::-moz-placeholder
+      color light-color
+    &:-moz-placeholder
+      color light-color
+    &:-ms-input-placeholder
+      color light-color
