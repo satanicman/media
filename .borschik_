@@ -1,0 +1,15 @@
+{
+    "freeze_paths" : {
+        "img/**": "./dist/_",
+        "libs/**": "./dist/_",
+        "*.blocks/**": "./dist/_",
+        "./fonts/**/*.eot": "./dist/fonts",
+        "./fonts/**/*.ttf": "./dist/fonts",
+        "./fonts/**/*.woff": "./dist/fonts"
+    },
+
+    "paths" : {
+        "./dist/_" : "_/",
+        "./dist/fonts/" : "fonts/"
+    }
+}
