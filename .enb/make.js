@@ -36,6 +36,8 @@ var techs = {
 
     pages = [
         'desktop.bundles/index',
+        'desktop.bundles/list',
+        'desktop.bundles/post'
     ],
 
     fse = require('fs-extra'),
