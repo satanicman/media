@@ -204,114 +204,6 @@ module.exports = {
                                                                                     {
                                                                                         elem: 'description',
                                                                                         content: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.'
-                                                                                    },
-                                                                                    {
-                                                                                        block: 'comments',
-                                                                                        content: [
-                                                                                            {
-                                                                                                elem: 'list',
-                                                                                                content: {
-                                                                                                    elem: 'item',
-                                                                                                    content: {
-                                                                                                        block: 'comment',
-                                                                                                        content: [
-                                                                                                            {
-                                                                                                                elem: 'avatar',
-                                                                                                                content: {
-                                                                                                                    block: 'image',
-                                                                                                                    mix: {block: 'comment', elem: 'image'},
-                                                                                                                    url: '../../common.blocks/comment/comment.jpg',
-                                                                                                                    alt: 'avatar',
-                                                                                                                    title: 'avatar'
-                                                                                                                }
-                                                                                                            },
-                                                                                                            {
-                                                                                                                elem: 'content',
-                                                                                                                content: [
-                                                                                                                    {
-                                                                                                                        elem: 'header',
-                                                                                                                        content: [
-                                                                                                                            {
-                                                                                                                                elem: 'info',
-                                                                                                                                content: [
-                                                                                                                                    {
-                                                                                                                                        elem: 'date',
-                                                                                                                                        content: '27.02.2017'
-                                                                                                                                    },
-                                                                                                                                    {
-                                                                                                                                        elem: 'name',
-                                                                                                                                        content: 'Павло Зибров'
-                                                                                                                                    }
-                                                                                                                                ]
-                                                                                                                            }, // comment__info
-                                                                                                                            {
-                                                                                                                                elem: 'button',
-                                                                                                                                content: {
-                                                                                                                                    block: 'button',
-                                                                                                                                    text: 'ответить'
-                                                                                                                                }
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                                    }, // comment__header
-                                                                                                                    {
-                                                                                                                        elem: 'description',
-                                                                                                                        content: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.'
-                                                                                                                    }
-                                                                                                                ]
-                                                                                                            }
-                                                                                                        ]
-                                                                                                    }
-                                                                                                }
-                                                                                            }, // comments__list
-                                                                                            {
-                                                                                                elem: 'form',
-                                                                                                content: {
-                                                                                                    block: 'comments-form',
-                                                                                                    content: [
-                                                                                                        {
-                                                                                                            elm: 'title',
-                                                                                                            content: ''
-                                                                                                        },
-                                                                                                        {
-                                                                                                            elem: 'form',
-                                                                                                            method: 'POST',
-                                                                                                            action: '/',
-                                                                                                            content: [
-                                                                                                                {
-                                                                                                                    block: 'input',
-                                                                                                                    mix: {block: 'comment-form', elem: 'input'},
-                                                                                                                    name: 'name',
-                                                                                                                    placeholder: 'Имя'
-                                                                                                                },
-                                                                                                                {
-                                                                                                                    block: 'input',
-                                                                                                                    mix: {block: 'comment-form', elem: 'input'},
-                                                                                                                    name: 'email',
-                                                                                                                    placeholder: 'Email'
-                                                                                                                },
-                                                                                                                {
-                                                                                                                    block: 'textarea',
-                                                                                                                    mix: {block: 'comment-form', elem: 'textarea'},
-                                                                                                                    name: 'description',
-                                                                                                                    placeholder: 'Сообщение'
-                                                                                                                },
-                                                                                                                {
-                                                                                                                    elem: 'file',
-                                                                                                                    name: 'file',
-                                                                                                                    content: 'Добавить фото к комментарию'
-                                                                                                                },
-                                                                                                                {
-                                                                                                                    block: 'button',
-                                                                                                                    mix: {block: 'comment-form', elem: 'button'},
-                                                                                                                    content: 'Отправить'
-                                                                                                                }
-
-                                                                                                            ]
-                                                                                                        }
-                                                                                                    ]
-                                                                                                }
-                                                                                            }
-                                                                                        ]
                                                                                     }
                                                                                 ]
                                                                             }
@@ -325,7 +217,7 @@ module.exports = {
                                                                     block: 'comments-form',
                                                                     content: [
                                                                         {
-                                                                            elm: 'title',
+                                                                            elem: 'title',
                                                                             content: 'Оставить комментарий'
                                                                         },
                                                                         {
@@ -335,30 +227,35 @@ module.exports = {
                                                                             content: [
                                                                                 {
                                                                                     block: 'input',
-                                                                                    mix: {block: 'comment-form', elem: 'input'},
+                                                                                    mix: {block: 'comments-form', elem: 'input'},
                                                                                     name: 'name',
                                                                                     placeholder: 'Имя'
                                                                                 },
                                                                                 {
                                                                                     block: 'input',
-                                                                                    mix: {block: 'comment-form', elem: 'input'},
+                                                                                    mix: {block: 'comments-form', elem: 'input'},
                                                                                     name: 'email',
                                                                                     placeholder: 'Email'
                                                                                 },
                                                                                 {
-                                                                                    block: 'textarea',
-                                                                                    mix: {block: 'comment-form', elem: 'textarea'},
-                                                                                    name: 'description',
-                                                                                    placeholder: 'Сообщение'
+                                                                                    elem: 'textarea',
+                                                                                    content: {
+                                                                                        block: 'textarea',
+                                                                                        name: 'description',
+                                                                                        placeholder: 'Сообщение'
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    elem: 'file-label',
+                                                                                    content: 'Добавить фото к комментарию'
                                                                                 },
                                                                                 {
                                                                                     elem: 'file',
                                                                                     name: 'file',
-                                                                                    content: 'Добавить фото к комментарию'
                                                                                 },
                                                                                 {
                                                                                     block: 'button',
-                                                                                    mix: {block: 'comment-form', elem: 'button'},
+                                                                                    mix: {block: 'comments-form', elem: 'button'},
                                                                                     content: 'Отправить'
                                                                                 }
 
