@@ -90,7 +90,8 @@ module.exports = ([
                                     },
                                     mix: [
                                         {block: 'footer', elem: 'col'},
-                                        {block: 'col-lg-4'}
+                                        {block: 'col-lg-4'},
+                                        {block: 'col-sm-6'}
                                     ],
                                     content: [
                                         {
@@ -132,7 +133,8 @@ module.exports = ([
                                     },
                                     mix: [
                                         {block: 'footer', elem: 'col'},
-                                        {block: 'col-lg-4'}
+                                        {block: 'col-lg-4'},
+                                        {block: 'col-sm-6'}
                                     ],
                                     content: [
                                         {

@@ -101,24 +101,22 @@ module.exports = {
                                                             block: 'post-buttons',
                                                             content: [
                                                                 {
-                                                                    block: 'button',
-                                                                    mix: {block: 'post-buttons', elem: 'button'},
-                                                                    text: 'Новости'
+                                                                    elem: 'button',
+                                                                    content: 'Новости'
                                                                 },
                                                                 {
-                                                                    block: 'button',
-                                                                    mix: {block: 'post-buttons', elem: 'button'},
-                                                                    text: 'Общество'
+                                                                    elem: 'button',
+                                                                    content: 'Общество'
                                                                 },
                                                                 {
-                                                                    block: 'button',
-                                                                    mix: {block: 'post-buttons', elem: 'button'},
-                                                                    text: 'Люди'
+                                                                    elem: 'button',
+                                                                    content: 'Люди'
                                                                 }
                                                             ]
                                                         },
                                                         {
                                                             block: 'share',
+                                                            mix: {block: 'post', elem: 'share'},
                                                             content: {
                                                                 elem: 'list',
                                                                 content: [

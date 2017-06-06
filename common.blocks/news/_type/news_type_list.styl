@@ -2,9 +2,17 @@
   clearfix()
   .news__image,
   .news-description
-    float: left
+    @media (min-width $screen-md)
+      float: left
   .news__image
-    width: 35%
+    margin-bottom: 30px
+    @media (min-width $screen-md)
+      width: 35%
+      margin-bottom: 0
+    .image
+      @extend .img-responsive
+      width: 100%
   .news-description
-    width 64%
-    padding-left: 30px
+    @media (min-width $screen-md)
+      width 64%
+      padding-left: 30px

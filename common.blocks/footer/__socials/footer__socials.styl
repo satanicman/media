@@ -3,7 +3,12 @@
   .socials__list
     padding 60px 0
     border-bottom 1px solid rgba(#fff, .1)
-    @media (min-width $screen-lg)
-      display flex
-      justify-content space-between
-      align-items center
+    display flex
+    justify-content space-between
+    align-items center
+    .socials__link
+      @media (max-width $screen-sm-max)
+        font-size em(22px)
+    .socials__text
+      @media (max-width $screen-sm-max)
+        display none
